@@ -1,0 +1,14 @@
+.button {
+    background-color: var(--accent);
+    padding: 10px;
+    cursor: pointer;
+    color: var(--button-primary-text);
+    background-color: var(--button-primary-background);
+    border: none;
+    min-width: 100px;
+}
+
+.button:hover {
+    background-color: var(--button-primary-background-hover);
+    transform: scale(1.1);
+}

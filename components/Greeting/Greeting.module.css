@@ -1,0 +1,51 @@
+.greeting {
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting article {
+    text-wrap: balance;
+}
+
+.greeting section {
+    display: flex;
+    justify-content: end;
+
+    @media (max-width: 600px) {
+        justify-content: center;
+    }
+}
+
+.greeting section a {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 20px;
+
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+}
+
+.greeting section a p {
+    @media (max-width: 600px) {
+        margin-top: -25px;
+    }
+}
+
+.greeting section a:hover {
+    transform: scale(1.1);
+}
+
+.greeting img {
+    filter: grayscale(0.6);
+}
+
+.greeting section a:hover img {
+    filter: drop-shadow(4px 4px 10px var(--accent)) grayscale(0.25);
+}

@@ -1,0 +1,29 @@
+.post {
+    max-width: 1000px;
+    text-wrap: ballance;
+}
+
+.post h1 {
+    color: var(--accent);
+}
+
+.post article {
+    padding-top: 40px;
+}
+
+.post blockquote {
+    padding: 20px;
+    text-wrap: balance;
+}
+
+.post blockquote p:first-child::before {
+  content: "\201C";
+}
+
+.post blockquote p:first-child:after {
+  content: "\201D";
+}
+
+.post blockquote p:nth-child(2) {
+    text-align: right;
+}

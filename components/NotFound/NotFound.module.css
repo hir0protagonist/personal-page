@@ -1,0 +1,36 @@
+.not-found {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.not-found a {
+    text-decoration: none;
+}
+
+.image {
+    animation-name: rolling;
+    animation-timing-function: linear;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    filter: grayscale(0.33);
+}
+
+@keyframes rolling {
+    0% {
+        transform: rotateZ(0);
+        translate: 0px 0px 0px;
+
+    }
+    50% {
+        transform: rotateZ(180deg);
+        translate: 5px 25px 0px;
+    }
+    100% {
+        transform: rotateZ(360deg);
+        translate: 0px 0px 0px;
+
+    }
+}

@@ -1,0 +1,14 @@
+.toggle {
+    border: none;
+    color: unset;
+    background: unset;
+}
+
+.toggle svg {
+    cursor: pointer;
+}
+
+.toggle svg:hover {
+    transform: scale(1.25);
+    color: var(--accent);
+}

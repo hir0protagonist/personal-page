@@ -1,0 +1,37 @@
+.header {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.header nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header nav li {
+    list-style: none;
+}
+
+.header nav li:hover {
+    transform: scale(1.1);
+}
+
+.header nav a {
+    text-decoration: underline;
+}

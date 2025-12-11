@@ -1,0 +1,21 @@
+.loader {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gaP :10px
+}
+
+.loader svg {
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    50% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(180deg);
+    }
+}
