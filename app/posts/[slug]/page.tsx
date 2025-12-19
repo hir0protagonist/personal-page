@@ -16,16 +16,15 @@ type BlogPostProps = {
 
 export default async function BlogPost({ params }: BlogPostProps) {
     const { slug } = await params;
-    const meta = JSON.parse(await fs.readFile(process.cwd() + `/posts/meta.json`, 'utf8'));
+    const meta = await postsService.getPostMeta(slug);
 
-    if (!meta['posts'][slug]) return <NotFound />;
+    if (!meta) return <NotFound />;
 
-    const { title, published } = meta['posts'][slug];
+    const { title, publishedAt } = meta;
     let post;
 
     try {
-        //post = await fs.readFile(process.cwd() + `/posts/${slug}.md`, 'utf8');
-        post = await postsService.getPost(slug);//AwsService.getObject(`${slug}.md`);
+        post = await postsService.getPost(slug);
     } catch {}
 
     return post ? (
@@ -35,7 +34,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     <ViewTransition name={'post-' + slug}>
                         <h1 id="post">{title}</h1>
                     </ViewTransition>
-                    <p>[{new Date(published).toLocaleDateString()}]</p>
+                    <p>[{new Date(publishedAt).toLocaleDateString()}]</p>
                 </header>
                 <article aria-labelledby="post">
                     <Markdown remarkPlugins={[remarkGfm]}>{post}</Markdown>
