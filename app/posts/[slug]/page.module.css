@@ -3,8 +3,13 @@
     text-wrap: ballance;
 }
 
+.post a {
+    color: var(--accent);
+}
+
 .post h1 {
     color: var(--accent);
+    font-size: 1.75rem;
 }
 
 .post article {
@@ -14,6 +19,8 @@
 .post blockquote {
     padding: 20px;
     text-wrap: balance;
+    text-align: right;
+    font-style: italic;
 }
 
 .post blockquote p:first-child::before {

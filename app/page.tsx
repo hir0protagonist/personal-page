@@ -1,16 +1,15 @@
-import Greeting from '../components/Greeting/Greeting';
-import Header from '../components/Header/Header';
+import { ViewTransition } from 'react';
 import styles from './page.module.css';
+import Header from '@/ui/layout/header/header';
+import Intro from '@/ui/home/intro/intro';
 
 export default function Home() {
     return (
-        <section className={styles.page}>
-            <Header title="Sergey's personal page" />
-            <main>
-                <section className={styles.greeting}>
-                    <Greeting></Greeting>
-                </section>
-            </main>
-        </section>
+        <ViewTransition>
+            <Header title="Sergey's homepage" />
+            <div className={styles.content}>
+                <Intro></Intro>
+            </div>
+        </ViewTransition>
     );
 }

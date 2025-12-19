@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Header from '@/ui/layout/header/header';
 import styles from './layout.module.css';
-import Header from '@/components/Header/Header';
 
 export default function BlogPostLayout({
     children,

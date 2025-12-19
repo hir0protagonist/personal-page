@@ -1,4 +1,4 @@
-.page main {
+.content {
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -7,6 +7,6 @@
     gap: 2rem;
 }
 
-.greeting {
+.content > * {
     max-width: 800px;
 }

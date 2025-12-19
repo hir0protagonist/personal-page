@@ -1,0 +1,43 @@
+.post {
+    width: 500px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    min-height: 130px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        width: auto;
+    }
+}
+
+.post:hover {
+    transform: scale(1.1);
+}
+
+.post main h2 {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.post main p {
+    font-weight: 500;
+}
+
+.post img {
+    filter: brightness(90%) drop-shadow(2px 2px 4px var(--foreground)) grayscale(0.75);
+}
+
+.post:hover img {
+    filter: saturate(150%) brightness(110%) drop-shadow(4px 4px 20px var(--accent)) grayscale(0.25);
+}
+
+.post section {
+    display: flex;
+
+    @media (max-width: 600px) {
+        justify-content: center;
+    }
+}

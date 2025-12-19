@@ -9,7 +9,6 @@
     --light-background: #f2f1e1;
     --light-foreground: #171717;
     --light-accent: rgb(123, 76, 250);
-    /* --light-accent: rgb(93, 41, 237); */
 
     --dark-background: #2b2a2a;
     --dark-foreground: #ededed;
@@ -20,11 +19,10 @@
     --accent: var(--light-accent);
 
     --text-primary: var(--foreground);
-    --text-secondary: var(--foreground);
 
-    --button-primary-text: #383838;
-    --button-primary-background: rgb(245, 182, 64);
-    --button-primary-background-hover: rgb(238, 192, 106);
+    --button-primary-text: var(--background);
+    --button-primary-background: var(--accent);
+    --button-primary-background-hover: var(--accent);
 
     --breakpoint-sm: 480px;
     --breakpoint-md: 768px;
@@ -52,11 +50,19 @@
     --accent: var(--dark-accent);
 }
 
+.d-js-required {
+    display: none;
+}
+
+:root[data-javascript='true'] .d-js-required {
+    display: unset;
+}
+
 html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
-    height: 100vh;
+    height: 100dvh;
 }
 
 html {
@@ -74,9 +80,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    max-width: 1400px;
     display: grid;
     grid-template-rows: 1fr 40px;
+    justify-items: center;
 }
 
 * {
@@ -94,7 +100,13 @@ a:hover {
     color: var(--accent);
 }
 
-footer {
+body > footer,
+body > main {
+    width: 100%;
+    max-width: 1400px;
+}
+
+body > footer {
     text-align: right;
 }
 
@@ -104,53 +116,11 @@ footer {
   } */
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-    /* a.primary:hover {
-        background: var(--button-primary-hover);
-        border-color: transparent;
-    }
-
-    a.secondary:hover {
-        background: var(--button-secondary-hover);
-        border-color: transparent;
-    } */
-}
-
 @media (max-width: 600px) {
-    /* .main {
-        padding: 48px 24px;
-    }
-
-    .intro {
-        gap: 16px;
-    }
-
-    .intro h1 {
-        font-size: 32px;
-        line-height: 40px;
-        letter-spacing: -1.92px;
-    } */
-
-    footer {
+    body > footer {
         text-align: center;
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    /* .logo {
-        filter: invert();
-    }
-
-    .page {
-        --background: #000;
-        --foreground: #000;
-
-        --text-primary: #ededed;
-        --text-secondary: #999;
-
-        --button-primary-hover: #ccc;
-        --button-secondary-hover: #1a1a1a;
-        --button-secondary-border: #1a1a1a;
-    } */
 }

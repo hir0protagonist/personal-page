@@ -1,8 +1,12 @@
+import { ViewTransition } from 'react';
 import { promises as fs } from 'fs';
-import styles from './page.module.css';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import NotFound from '@/components/NotFound/NotFound';
+import NotFound from '@/ui/shared/NotFound/NotFound';
+import styles from './page.module.css';
+import { PostsService } from '@/lib/services/posts/service';
+
+const postsService = new PostsService();
 
 type BlogPostProps = {
     title: string;
@@ -16,27 +20,28 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
     if (!meta['posts'][slug]) return <NotFound />;
 
-    const { title, publishedAt, quote } = meta['posts'][slug];
+    const { title, published } = meta['posts'][slug];
     let post;
 
     try {
-        post = await fs.readFile(process.cwd() + `/posts/${slug}.md`, 'utf8');
+        //post = await fs.readFile(process.cwd() + `/posts/${slug}.md`, 'utf8');
+        post = await postsService.getPost(slug);//AwsService.getObject(`${slug}.md`);
     } catch {}
 
     return post ? (
-        <section className={styles.post}>
-            <h1>{title}</h1>
-            <p>[{new Date(publishedAt).toLocaleDateString()}]</p>
-            {quote && (
-                <blockquote>
-                    <p>{quote.text}</p>
-                    <p>{quote.author}</p>
-                </blockquote>
-            )}
-            <article>
-                <Markdown remarkPlugins={[remarkGfm]}>{post}</Markdown>
-            </article>
-        </section>
+        <ViewTransition>
+            <section className={styles.post}>
+                <header>
+                    <ViewTransition name={'post-' + slug}>
+                        <h1 id="post">{title}</h1>
+                    </ViewTransition>
+                    <p>[{new Date(published).toLocaleDateString()}]</p>
+                </header>
+                <article aria-labelledby="post">
+                    <Markdown remarkPlugins={[remarkGfm]}>{post}</Markdown>
+                </article>
+            </section>
+        </ViewTransition>
     ) : (
         <NotFound />
     );

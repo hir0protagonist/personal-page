@@ -1,22 +1,14 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
+import Script from 'next/script';
+import ThemeProvider from '@/lib/providers/theme/theme-provider';
+import { Theme } from '@/lib/providers/theme/types';
+import { THEME_COOKIE_NAME } from '@/lib/constants/cookie';
 import './globals.css';
-import ThemeProvider from '@/providers/ThemeProvider/ThemeProvider';
-import { Theme } from '@/providers/ThemeProvider';
-
-// const geistSans = Geist({
-//     variable: '--font-geist-sans',
-//     subsets: ['latin'],
-// });
-
-// const geistMono = Geist_Mono({
-//     variable: '--font-geist-mono',
-//     subsets: ['latin'],
-// });
 
 export const metadata: Metadata = {
-    title: `Sergey's homepage`,
-    description: `Hi! I'm Sergey. Here is my personal page`,
+    title: 'Given Existence',
+    description: `Hi! I'm Sergey. This is my personal page.`,
 };
 
 export default async function RootLayout({
@@ -25,16 +17,19 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     const cookieStore = await cookies();
-    const theme = cookieStore.get('theme')?.value;
+    const theme = cookieStore.get(THEME_COOKIE_NAME)?.value as Theme;
 
     return (
         <html lang="en" data-theme={theme || 'system'}>
-            <ThemeProvider storedTheme={theme as Theme}>
-                <body>
-                    {children}
-                    <footer>© Given Existence | 2025</footer>
-                </body>
-            </ThemeProvider>
+            <Script id="set-js-enable">
+                {`document.documentElement.dataset['javascript'] = true`}
+            </Script>
+            <body>
+                <ThemeProvider storedTheme={theme}>
+                    <main>{children}</main>
+                </ThemeProvider>
+                <footer>© Given Existence | 2025</footer>
+            </body>
         </html>
     );
 }
