@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
-import ThemeProvider from '../lib/providers/theme/ThemeProvider';
-import { Theme } from '../lib/providers/theme/types';
-import { THEME_COOKIE_NAME } from '../lib/constants/cookie';
+import ThemeProvider from '@/lib/providers/theme/ThemeProvider';
+import { Theme } from '@/lib/providers/theme/types';
+import { THEME_COOKIE_NAME } from '@/lib/constants/cookie';
 import './globals.css';
 
 export const metadata: Metadata = {

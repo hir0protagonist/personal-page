@@ -1,5 +1,5 @@
-import Header from '../ui/layout/Header/Header';
-import NotFound from '../ui/components/NotFound/NotFound';
+import NotFound from '@/ui/components/NotFound/NotFound';
+import Header from '@/ui/layout/Header/Header';
 
 export default function NotFoundPage() {
     return (

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Header from '../../../ui/layout/Header/Header';
+import Header from '@/ui/layout/Header/Header';
 import styles from './layout.module.css';
 
-export default function BlogPostLayout({
+export default function BlogLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;

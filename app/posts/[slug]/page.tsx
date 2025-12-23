@@ -1,12 +1,12 @@
 import { ViewTransition } from 'react';
-import Post from '../../../features/blog/components/Post/Post';
+import Post from '@/features/blog/components/Post/Post';
 
 type PostPageProps = {
     params: Promise<{ slug: string }>;
     searchParams: Promise<{ lang: string | undefined }>;
 };
 
-export default async function BlogPost({ params, searchParams }: PostPageProps) {
+export default async function BlogPage({ params, searchParams }: PostPageProps) {
     const { slug } = await params;
     const { lang } = await searchParams;
 
