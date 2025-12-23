@@ -1,5 +1,5 @@
 import { ViewTransition } from 'react';
-import Post from '@/features/blog/components/Post/Post';
+import Post from '../../../features/blog/components/Post/Post';
 
 type PostPageProps = {
     params: Promise<{ slug: string }>;

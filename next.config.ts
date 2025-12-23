@@ -7,11 +7,6 @@ const nextConfig: NextConfig = {
     images: {
         remotePatterns: [new URL('https://storage.yandexcloud.net/personal-page-storage/images/**')],
     },
-     turbopack: {
-        resolveAlias: {
-            '@': './',
-        }
-  },
 };
 
 export default nextConfig;
