@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext } from 'react';
-import styles from './theme-toggle.module.css';
+import { ThemeContext } from '@/lib/providers/theme/ThemeContext';
+import styles from './ThemeToggle.module.css';
 import { SystemIcon, SunIcon, MoonIcon } from './icons';
-import { ThemeContext } from '@/lib/providers/theme/theme-context';
 
 export default function ThemeToggle() {
     const { theme, setTheme } = useContext(ThemeContext);

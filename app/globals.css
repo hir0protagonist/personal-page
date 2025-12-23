@@ -1,4 +1,6 @@
 :root {
+    color-scheme: dark light;
+
     --font-mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         'Liberation Mono', monospace;
     --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
@@ -14,9 +16,9 @@
     --dark-foreground: #ededed;
     --dark-accent: rgb(245, 182, 64);
 
-    --background: var(--light-background);
-    --foreground: var(--light-foreground);
-    --accent: var(--light-accent);
+    --background: light-dark(var(--light-background), var(--dark-background));
+    --foreground: light-dark(var(--light-foreground), var(--dark-foreground));
+    --accent: light-dark(var(--light-accent), var(--dark-accent));
 
     --text-primary: var(--foreground);
 
@@ -28,14 +30,6 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1200px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: var(--dark-background);
-        --foreground: var(--dark-foreground);
-        --accent: var(--dark-accent);
-    }
 }
 
 :root[data-theme='light'] {
@@ -110,17 +104,8 @@ body > footer {
     text-align: right;
 }
 
-@media (prefers-color-scheme: dark) {
-    /* html {
-    color-scheme: dark;
-  } */
-}
-
 @media (max-width: 600px) {
     body > footer {
         text-align: center;
     }
-}
-
-@media (prefers-color-scheme: dark) {
 }

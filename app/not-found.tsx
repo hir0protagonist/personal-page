@@ -1,11 +1,11 @@
-import Header from '@/ui/layout/header/header';
-import NotFound from '../ui/shared/NotFound/NotFound';
+import Header from '@/ui/layout/Header/Header';
+import NotFound from '../ui/components/NotFound/NotFound';
 
 export default function NotFoundPage() {
     return (
         <>
             <Header />
-            <section
+            <div
                 style={{
                     width: '100%',
                     display: 'flex',
@@ -14,7 +14,7 @@ export default function NotFoundPage() {
                     padding: '120px 0 0 0',
                 }}>
                 <NotFound />
-            </section>
+            </div>
         </>
     );
 }

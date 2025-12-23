@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Header from '@/ui/layout/header/header';
+import Header from '@/ui/layout/Header/Header';
 import styles from './layout.module.css';
 
 export default function BlogPostLayout({
@@ -8,10 +8,12 @@ export default function BlogPostLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <section className={styles.blog}>
+        <div className={styles.blog}>
             <Header />
-            <Link href={'/posts'}>Back to posts</Link>
-            <article>{children}</article>
-        </section>
+            <section className={styles.back}>
+                <Link href={'/posts'}>Back to posts</Link>
+            </section>
+            {children}
+        </div>
     );
 }

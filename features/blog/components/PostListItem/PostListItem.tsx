@@ -1,14 +1,13 @@
 import { ViewTransition } from 'react';
 import Image from 'next/image';
-import { PostMeta } from '@/lib/services/posts/types';
-import styles from './PostItem.module.css';
+import styles from './PostListItem.module.css';
+import { PostMeta } from '../../types';
 
-type PostItemProps = {
+type PostLIstItemProps = {
     post: PostMeta;
 };
 
-export default function PostItem({ post }: PostItemProps) {
-    console.log(`${process.env.S3_IMG_SRC}/${post.picture.filename}`);
+export default function PostListItem({ post }: PostLIstItemProps) {
     return (
         <article className={styles.post}>
             <main>

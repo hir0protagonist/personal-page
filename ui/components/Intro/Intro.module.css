@@ -1,13 +1,14 @@
-.greeting {
+.intro {
     display: flex;
     flex-direction: column;
+    max-width: 800px;
 }
 
-.greeting article {
-    text-wrap: balance;
+.intro p {
+    text-wrap: pretty;
 }
 
-.greeting section {
+.intro > footer {
     padding-top: 30px;
     display: flex;
     justify-content: center;

@@ -8,8 +8,12 @@
     transition: transform 0.3s ease;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
     background-color: var(--button-primary-background-hover);
     transform: scale(1.1);
     filter: grayscale(0.2);
+}
+
+.button:disabled {
+    filter: grayscale(1);
 }

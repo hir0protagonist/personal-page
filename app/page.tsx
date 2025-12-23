@@ -1,7 +1,7 @@
 import { ViewTransition } from 'react';
+import Header from '@/ui/layout/Header/Header';
+import { Intro } from '@/ui/components';
 import styles from './page.module.css';
-import Header from '@/ui/layout/header/header';
-import Intro from '@/ui/home/intro/intro';
 
 export default function Home() {
     return (

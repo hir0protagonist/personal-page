@@ -15,4 +15,19 @@
 .blog article {
     padding-top: 20px;
     max-width: 800px;
+    width: 100%;
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back a {
+    text-decoration: none;
+}
+
+.back a:hover {
+    text-decoration: underline;
 }

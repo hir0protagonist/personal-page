@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { THEME_COOKIE_NAME } from '@/lib/constants/cookie';
 import { THEME, Theme } from './types';
-import { ThemeContext } from './theme-context';
+import { ThemeContext } from './ThemeContext';
 
 export default function ThemeProvider({
     storedTheme,

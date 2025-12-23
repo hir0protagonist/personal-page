@@ -6,7 +6,3 @@
     justify-content: center;
     gap: 2rem;
 }
-
-.content > * {
-    max-width: 800px;
-}

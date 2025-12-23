@@ -7,9 +7,10 @@ type NotFoundProps = {
         href: string;
         text: string;
     };
+    message?: string;
 };
 
-export default function NotFound({ backLink }: NotFoundProps) {
+export default function NotFound({ backLink, message }: NotFoundProps) {
     return (
         <section className={styles['not-found']}>
             <Image
@@ -19,7 +20,7 @@ export default function NotFound({ backLink }: NotFoundProps) {
                 width={150}
                 height={150}
             />
-            Uh-Oh... This page was removed or never existed
+            {message || 'Uh-Oh... This page was removed or never existed'}
             {backLink && <Link href={backLink.href}>{backLink.text}</Link>}
         </section>
     );

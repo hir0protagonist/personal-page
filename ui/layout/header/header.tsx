@@ -1,6 +1,6 @@
 import { ViewTransition } from 'react';
-import ThemeToggle from '@/ui/shared/theme-toggle/theme-toggle';
-import styles from './header.module.css';
+import ThemeToggle from '@/ui/components/ThemeToggle/ThemeToggle';
+import styles from './Header.module.css';
 
 type HeaderProps = {
     title?: string;

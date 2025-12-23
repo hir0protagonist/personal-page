@@ -1,4 +1,4 @@
-import { ObjectValues } from '@/lib/utils/types';
+import { ObjectValues } from '@/lib/utils/typeUtils';
 
 export const THEME = {
     SYSTEM: 'system',

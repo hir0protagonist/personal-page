@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
-import ThemeProvider from '@/lib/providers/theme/theme-provider';
+import ThemeProvider from '@/lib/providers/theme/ThemeProvider';
 import { Theme } from '@/lib/providers/theme/types';
 import { THEME_COOKIE_NAME } from '@/lib/constants/cookie';
 import './globals.css';
 
 export const metadata: Metadata = {
     title: 'Given Existence',
-    description: `Hi! I'm Sergey. This is my personal page.`,
+    description: `Hi! My Name is Sergey. This is my personal page.`,
 };
 
 export default async function RootLayout({
@@ -16,8 +16,7 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const cookieStore = await cookies();
-    const theme = cookieStore.get(THEME_COOKIE_NAME)?.value as Theme;
+    const theme = (await cookies()).get(THEME_COOKIE_NAME)?.value as Theme;
 
     return (
         <html lang="en" data-theme={theme || 'system'}>
@@ -27,8 +26,8 @@ export default async function RootLayout({
             <body>
                 <ThemeProvider storedTheme={theme}>
                     <main>{children}</main>
+                    <footer>© Given Existence | 2025</footer>
                 </ThemeProvider>
-                <footer>© Given Existence | 2025</footer>
             </body>
         </html>
     );
