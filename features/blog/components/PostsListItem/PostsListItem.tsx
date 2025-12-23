@@ -1,6 +1,6 @@
 import { ViewTransition } from 'react';
 import Image from 'next/image';
-import styles from './PostListItem.module.css';
+import styles from './PostsListItem.module.css';
 import { PostMeta } from '../../types';
 
 type PostListItemProps = {

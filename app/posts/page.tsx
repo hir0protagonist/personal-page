@@ -1,10 +1,10 @@
 import { ViewTransition } from 'react';
-import PostList from '@/features/blog/components/PostList/PostList';
+import PostsList from '@/features/blog/components/PostsList/PostsList';
 
 export default async function Page() {
     return (
         <ViewTransition>
-            <PostList></PostList>
+            <PostsList></PostsList>
         </ViewTransition>
     );
 }
