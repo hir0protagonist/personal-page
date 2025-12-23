@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import styles from './PostLIst.module.css';
 import Header from '@/ui/layout/Header/Header';
 import { listPosts } from '../../services/posts.service';
 import PostListItem from '../PostListItem/PostListItem';
+import styles from './PostList.module.css';
 
 export default async function PostList() {
     const posts = await listPosts();

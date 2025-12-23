@@ -3,11 +3,11 @@ import Image from 'next/image';
 import styles from './PostListItem.module.css';
 import { PostMeta } from '../../types';
 
-type PostLIstItemProps = {
+type PostListItemProps = {
     post: PostMeta;
 };
 
-export default function PostListItem({ post }: PostLIstItemProps) {
+export default function PostListItem({ post }: PostListItemProps) {
     return (
         <article className={styles.post}>
             <main>
