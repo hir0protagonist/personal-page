@@ -1,5 +1,5 @@
 import { ViewTransition } from 'react';
-import PostList from '../../features/blog/components/PostList/PostList';
+import PostList from '@/features/blog/components/PostList/PostList';
 
 export default async function Page() {
     return (

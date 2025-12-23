@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Header from '@/ui/layout/Header/Header';
+import Header from '@/ui/components/Header/Header';
 import styles from './layout.module.css';
 
 export default function BlogLayout({

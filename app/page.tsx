@@ -1,5 +1,5 @@
 import { ViewTransition } from 'react';
-import Header from '@/ui/layout/Header/Header';
+import Header from '@/ui/components/Header/Header';
 import { Intro } from '@/ui/components';
 import styles from './page.module.css';
 
