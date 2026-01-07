@@ -6,25 +6,3 @@
     padding-top: 10px;
     gap: 20px;
 }
-
-.page a {
-    text-decoration: none;
-}
-
-.page > a:hover {
-    text-decoration: underline;
-}
-
-.posts {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 20px;
-    gap: 50px;
-    max-width: 500px;
-}
-
-.posts a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: inherit;
-}

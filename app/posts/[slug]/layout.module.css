@@ -13,9 +13,12 @@
 }
 
 .blog article {
-    padding-top: 20px;
     max-width: 800px;
     width: 100%;
+}
+
+.blog article:has(aside) {
+    max-width: 1000px;
 }
 
 .back {

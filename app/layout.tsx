@@ -19,13 +19,13 @@ export default async function RootLayout({
     const theme = (await cookies()).get(THEME_COOKIE_NAME)?.value as Theme;
 
     return (
-        <html lang="en" data-theme={theme || 'system'}>
-            <Script id="set-js-enable">
+        <html lang='en' data-theme={theme || 'system'}>
+            <Script id='set-js-enable'>
                 {`document.documentElement.dataset['javascript'] = true`}
             </Script>
             <body>
                 <ThemeProvider storedTheme={theme}>
-                    <main>{children}</main>
+                    <main id="main">{children}</main>
                     <footer>© Given Existence | 2025</footer>
                 </ThemeProvider>
             </body>

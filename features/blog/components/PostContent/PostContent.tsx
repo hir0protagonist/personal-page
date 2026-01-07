@@ -1,23 +1,30 @@
-import remarkGfm from 'remark-gfm';
-import { getPost } from '../../services/posts.service';
+import { MDXRemote } from 'next-mdx-remote-client/rsc';
 import styles from './PostContent.module.css';
-import Markdown from 'react-markdown';
-import NotFound from '@/ui/components/NotFound/NotFound';
-import { PostLanguage } from '../../types';
+import { PostLanguage, PostTOCItem } from '../../types';
+import { getPost } from '../../services/posts.service';
+import TableOfContent from '../TableOfContent/TableOfContent';
 
 type PostContentProps = {
     slug: string;
     lang: PostLanguage;
+    tableOfContent?: PostTOCItem[];
 };
 
-export default async function PostContent({ slug, lang }: PostContentProps) {
+export default async function PostContent({ slug, lang, tableOfContent = [] }: PostContentProps) {
     const post = (await getPost(slug + `_${lang}`)) || (await getPost(slug));
 
-    return post ? (
-        <article aria-labelledby="post" className={styles.post}>
-            <Markdown remarkPlugins={[remarkGfm]}>{post}</Markdown>
-        </article>
-    ) : (
-        <NotFound message="Uh-Oh... This post no longer exists." />
+    return (
+        post && (
+            <>
+                <article aria-labelledby='post' className={styles.post}>
+                    <MDXRemote source={post} />
+                </article>
+                {!!tableOfContent.length && (
+                    <aside className={styles.aside}>
+                        <TableOfContent items={tableOfContent} lang={lang} />
+                    </aside>
+                )}
+            </>
+        )
     );
 }

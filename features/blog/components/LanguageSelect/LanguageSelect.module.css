@@ -1,10 +1,10 @@
 .toggle button {
     border: none;
     color: var(--color);
-    background: unset;
+    background: transparent;
     cursor: pointer;
 }
 
 .toggle .selected {
-    font-weight: 600;
+    font-weight: 700;
 }

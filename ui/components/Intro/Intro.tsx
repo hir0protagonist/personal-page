@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import { Button } from '@/ui/components';
 import styles from './Intro.module.css';
+import Button from '../Button/Button';
 
 export function Intro() {
     return (
@@ -14,9 +13,9 @@ export function Intro() {
                 meant to be found. Enjoy the confusion. I do.
             </p>
             <footer>
-                <Link href="/posts">
-                    <Button text="Open the box"></Button>
-                </Link>
+                <Button as='link' href='/posts' variant='ghost' size='md'>
+                    Got it!
+                </Button>
             </footer>
         </article>
     );

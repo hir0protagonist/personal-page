@@ -24,4 +24,9 @@
 
 .post a {
     color: var(--accent);
+    text-decoration: none;
+}
+
+.post a:hover {
+    text-decoration: underline;
 }

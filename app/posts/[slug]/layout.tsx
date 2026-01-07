@@ -11,7 +11,7 @@ export default function BlogLayout({
         <div className={styles.blog}>
             <Header />
             <section className={styles.back}>
-                <Link href={'/posts'}>Back to posts</Link>
+                {/* <Link href={'/posts'}>Back to posts</Link> */}
             </section>
             {children}
         </div>

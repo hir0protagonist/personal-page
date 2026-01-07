@@ -1,11 +1,13 @@
 import { Suspense, ViewTransition } from 'react';
 import LanguageSelect from '@/features/blog/components/LanguageSelect/LanguageSelect';
-import NotFound from '@/ui/components/NotFound/NotFound';
 import PostContentLoader from '../PostContentPlaceholder/PostContentPlaceholder';
 import PostContent from '../PostContent/PostContent';
 import { PostLanguage } from '../../types';
 import { getPostMeta } from '../../services/posts.service';
 import styles from './Post.module.css';
+import TableOfContent from '../TableOfContent/TableOfContent';
+import Button from '@/ui/components/Button/Button';
+import { notFound } from 'next/navigation';
 
 type PostProps = {
     slug: string;
@@ -17,22 +19,31 @@ export default async function Post({ slug, language }: PostProps) {
     const languages = meta?.languages || ['en'];
     const lang = (language || languages[0]) as PostLanguage;
 
-    return meta ? (
+    if (!meta) return notFound();
+
+    return (
         <article className={styles.post}>
             <header>
+                <section className={styles.nav}>
+                    <Button as='link' href='/posts' variant='ghost'>
+                        More Posts
+                    </Button>
+                </section>
+
                 <ViewTransition name={'post-' + slug}>
-                    <h1 id="post">{meta.title}</h1>
+                    <h1 id='post'>{meta.title}</h1>
                 </ViewTransition>
                 <section>
                     <p>[{new Date(meta.publishedAt).toLocaleDateString()}]</p>
                     {languages.length > 1 && <LanguageSelect lang={lang} />}
                 </section>
             </header>
+
             <Suspense fallback={<PostContentLoader />}>
-                <PostContent slug={slug} lang={lang} />
+                <div className={styles.content}>
+                    <PostContent slug={slug} lang={lang} tableOfContent={meta.tableOfContent} />
+                </div>
             </Suspense>
         </article>
-    ) : (
-        <NotFound />
     );
 }

@@ -1,5 +1,10 @@
 export type PostLanguage = 'en' | 'ru';
 
+export type PostTOCItem = {
+    id: string;
+    text: string | Record<string, string>;
+};
+
 export type PostMeta = {
     slug: string;
     title: string;
@@ -12,4 +17,5 @@ export type PostMeta = {
         height: number;
     };
     languages?: PostLanguage[];
+    tableOfContent?: PostTOCItem[];
 };

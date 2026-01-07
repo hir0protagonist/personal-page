@@ -1,0 +1,30 @@
+.toc {
+    position: sticky;
+    top: 1px;
+    padding: 0 10px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc li {
+    position: relative;
+    padding-left: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    list-style-type: '';
+    padding: 0 0 0 5px;
+    margin: 10px 0 0 0;
+}
+
+.toc li.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.toc li.active {
+    /* background: linear-gradient(to right, var(--accent), transparent); */
+    border-radius: 6px;
+}

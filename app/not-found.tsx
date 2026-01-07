@@ -13,7 +13,7 @@ export default function NotFoundPage() {
                     alignItems: 'center',
                     padding: '120px 0 0 0',
                 }}>
-                <NotFound />
+                <NotFound backLink={{ href: '/', text: 'Back home' }} />
             </div>
         </>
     );

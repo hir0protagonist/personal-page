@@ -3,28 +3,105 @@
 
     --font-mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         'Liberation Mono', monospace;
-    --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
-        Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --font-serif: 'Sriracha', 'Wotfard-fallback', sans-serif;
     --font-size: 100%;
     --line-height: 1.5;
 
-    --light-background: #f2f1e1;
-    --light-foreground: #171717;
-    --light-accent: rgb(123, 76, 250);
+    /* Light mode */
+    --accent-light-h: 224;
+    --accent-light-s: 100%;
+    --accent-light-l: 65%;
 
-    --dark-background: #2b2a2a;
-    --dark-foreground: #ededed;
-    --dark-accent: rgb(245, 182, 64);
+    --bg-main-light: rgb(246, 245, 236);
+    --bg-elevated-light: rgb(252, 251, 245);
+    --bg-gradient-light: linear-gradient(
+        135deg,
+        hsl(var(--accent-light-h) 40% 96%) 0%,
+        rgb(246, 245, 236) 55%
+    );
 
-    --background: light-dark(var(--light-background), var(--dark-background));
-    --foreground: light-dark(var(--light-foreground), var(--dark-foreground));
-    --accent: light-dark(var(--light-accent), var(--dark-accent));
+    --text-primary-light: #1e1e1e;
+    --text-secondary-light: #4a4a4a;
 
-    --text-primary: var(--foreground);
+    --accent-light: hsl(var(--accent-light-h) var(--accent-light-s) var(--accent-light-l));
 
-    --button-primary-text: var(--background);
-    --button-primary-background: var(--accent);
-    --button-primary-background-hover: var(--accent);
+    --btn-primary-bg-light: hsl(224 100% 60%);
+    --btn-primary-hover-light: hsl(224 100% 55%);
+    --btn-primary-active-light: hsl(224 100% 50%);
+    --btn-primary-text-light: #ffffff;
+
+    --btn-secondary-bg-light: rgb(235, 233, 220);
+    --btn-secondary-hover-light: rgb(228, 226, 212);
+    --btn-secondary-active-light: rgb(220, 218, 204);
+    --btn-secondary-text-light: #1e1e1e;
+
+    --btn-ghost-text-light: hsl(224 100% 50%);
+    --btn-ghost-hover-light: rgba(0, 0, 0, 0.04);
+    --btn-ghost-active-light: rgba(0, 0, 0, 0.07);
+
+    --btn-focus-ring-light: hsl(224 100% 70% / 0.45);
+
+    /* Dark mode */
+    --accent-dark-h: 42;
+    --accent-dark-s: 78%;
+    --accent-dark-l: 58%;
+
+    --bg-main-dark: #2b2a2a;
+    --bg-elevated-dark: #323131;
+    --bg-gradient-dark: linear-gradient(180deg, #30302f 0%, #2b2a2a 55%, #272626 100%);
+    --text-primary-dark: #f2f2f2;
+    --text-secondary-dark: #c9c9c9;
+    --accent-dark: hsl(var(--accent-dark-h) var(--accent-dark-s) var(--accent-dark-l));
+
+    --btn-primary-bg-dark: hsl(42 70% 56%);
+    --btn-primary-hover-dark: hsl(42 70% 60%);
+    --btn-primary-active-dark: hsl(42 70% 52%);
+    --btn-primary-text-dark: #1a1a1a;
+
+    --btn-secondary-bg-dark: #3a3939;
+    --btn-secondary-hover-dark: #424141;
+    --btn-secondary-active-dark: #363535;
+    --btn-secondary-text-dark: #f2f2f2;
+
+    --btn-ghost-text-dark: hsl(42 70% 60%);
+    --btn-ghost-hover-dark: rgba(255, 255, 255, 0.05);
+    --btn-ghost-active-dark: rgba(255, 255, 255, 0.08);
+
+    --btn-focus-ring-dark: hsl(42 70% 60% / 0.45);
+
+    --accent: light-dark(var(--accent-light), var(--accent-dark));
+    --bg-gradient: light-dark(var(--bg-gradient-light), var(--bg-gradient-dark));
+    --text-primary: light-dark(var(--text-primary-light), var(--text-primary-dark));
+    --text-secondary: light-dark(var(--text-secondary-light), var(--text-secondary-dark));
+
+    --btn-primary-bg: light-dark(var(--btn-primary-bg-light), var(--btn-primary-bg-dark));
+    --btn-primary-hover: light-dark(var(--btn-primary-hover-light), var(--btn-primary-hover-dark));
+    --btn-primary-active: light-dark(
+        var(--btn-primary-active-light),
+        var(--btn-primary-active-dark)
+    );
+    --btn-primary-text: light-dark(var(--btn-primary-text-light), var(--btn-primary-text-dark));
+
+    --btn-secondary-bg: light-dark(var(--btn-secondary-bg-light), var(--btn-secondary-bg-dark));
+    --btn-secondary-hover: light-dark(
+        var(--btn-secondary-hover-light),
+        var(--btn-secondary-hover-dark)
+    );
+    --btn-secondary-active: light-dark(
+        var(--btn-secondary-active-light),
+        var(--btn-secondary-active-dark)
+    );
+    --btn-secondary-text: light-dark(
+        var(--btn-secondary-text-light),
+        var(--btn-secondary-text-dark)
+    );
+
+    --btn-ghost-bg: light-dark(var(--btn-ghost-bg-light), var(--btn-ghost-bg-dark));
+    --btn-ghost-hover: light-dark(var(--btn-ghost-hover-light), var(--btn-ghost-hover-dark));
+    --btn-ghost-active: light-dark(var(--btn-ghost-active-light), var(--btn-ghost-active-dark));
+    --btn-ghost-text: light-dark(var(--btn-ghost-text-light), var(--btn-ghost-text-dark));
+
+    --btn-focus-ring: light-dark(var(--btn-focus-ring-light), var(--btn-focus-ring-dark));
 
     --breakpoint-sm: 480px;
     --breakpoint-md: 768px;
@@ -33,15 +110,51 @@
 }
 
 :root[data-theme='light'] {
-    --background: var(--light-background);
-    --foreground: var(--light-foreground);
-    --accent: var(--light-accent);
+    --accent: var(--accent-light);
+    --bg-gradient: var(--bg-gradient-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+
+    --btn-primary-bg: var(--btn-primary-bg-light);
+    --btn-primary-hover: var(--btn-primary-hover-light);
+    --btn-primary-active: var(--btn-primary-active-light);
+    --btn-primary-text: var(--btn-primary-text-light);
+
+    --btn-secondary-bg: var(--btn-secondary-bg-light);
+    --btn-secondary-hover: var(--btn-secondary-hover-light);
+    --btn-secondary-active: var(--btn-secondary-active-light);
+    --btn-secondary-text: var(--btn-secondary-text-light);
+
+    --btn-ghost-bg: var(--btn-ghost-bg-light);
+    --btn-ghost-hover: var(--btn-ghost-hover-light);
+    --btn-ghost-active: var(--btn-ghost-active-light);
+    --btn-ghost-text: var(--btn-ghost-text-light);
+
+    --btn-focus-ring: var(--btn-focus-ring-light);
 }
 
 :root[data-theme='dark'] {
-    --background: var(--dark-background);
-    --foreground: var(--dark-foreground);
-    --accent: var(--dark-accent);
+    --accent: var(--accent-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --bg-gradient: var(--bg-gradient-dark);
+
+    --btn-primary-bg: var(--btn-primary-bg-dark);
+    --btn-primary-hover: var(--btn-primary-hover-dark);
+    --btn-primary-active: var(--btn-primary-active-dark);
+    --btn-primary-text: var(--btn-primary-text-dark);
+
+    --btn-secondary-bg: var(--btn-secondary-bg-dark);
+    --btn-secondary-hover: var(--btn-secondary-hover-dark);
+    --btn-secondary-active: var(--btn-secondary-active-dark);
+    --btn-secondary-text: var(--btn-secondary-text-dark);
+
+    --btn-ghost-bg: var(--btn-ghost-bg-dark);
+    --btn-ghost-hover: var(--btn-ghost-hover-dark);
+    --btn-ghost-active: var(--btn-ghost-active-dark);
+    --btn-ghost-text: var(--btn-ghost-text-dark);
+
+    --btn-focus-ring: var(--btn-focus-ring-dark);
 }
 
 .d-js-required {
@@ -65,8 +178,8 @@ html {
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+    color: var(--text-secondary);
+    background: var(--bg-gradient);
     font-family: var(--font-mono);
     font-size: var(--font-size);
     line-height: var(--line-height);
@@ -77,6 +190,8 @@ body {
     display: grid;
     grid-template-rows: 1fr 40px;
     justify-items: center;
+
+    transition: color 0.5s ease;
 }
 
 * {
