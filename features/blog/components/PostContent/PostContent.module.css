@@ -30,3 +30,9 @@
 .post a:hover {
     text-decoration: underline;
 }
+
+.aside {
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
