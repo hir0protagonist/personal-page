@@ -8,7 +8,7 @@ export default async function PostList() {
     return (
         <div>
             <Header title='[Not a] Blog' />
-            <section className={styles.page}>
+            <section className={styles.posts}>
                 <Suspense fallback={<Loader />}>
                     <PostsListItems></PostsListItems>
                 </Suspense>

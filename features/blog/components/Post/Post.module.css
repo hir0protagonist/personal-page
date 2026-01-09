@@ -5,6 +5,7 @@
 
 .post {
     color: var(--text-primary);
+    transition: var(--color-transition);
 }
 
 .post h1 {
