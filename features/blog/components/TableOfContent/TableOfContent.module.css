@@ -9,7 +9,7 @@
     padding: 0;
 }
 
-.toc li {
+.toc ul li {
     position: relative;
     padding-left: 20px;
     margin: 10px 0;
@@ -26,5 +26,6 @@
 
 .toc li.active {
     /* background: linear-gradient(to right, var(--accent), transparent); */
+    transform: scale(1.05);
     border-radius: 6px;
 }
