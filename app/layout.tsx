@@ -19,7 +19,7 @@ export default async function RootLayout({
     const theme = (await cookies()).get(THEME_COOKIE_NAME)?.value as Theme;
 
     return (
-        <html lang='en' data-theme={theme || 'system'}>
+        <html lang='en' data-theme={theme || 'dark'}>
             <Script id='set-js-enable'>
                 {`document.documentElement.dataset['javascript'] = true`}
             </Script>

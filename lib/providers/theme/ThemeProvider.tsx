@@ -12,7 +12,7 @@ export default function ThemeProvider({
     storedTheme?: Theme;
     children: React.ReactNode;
 }) {
-    const [theme, setTheme] = useState<Theme>(storedTheme || THEME.SYSTEM);
+    const [theme, setTheme] = useState<Theme>(storedTheme || THEME.DARK);
 
     useEffect(() => {
         const shouldStore = theme !== THEME.SYSTEM || storedTheme;
