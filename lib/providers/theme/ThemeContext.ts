@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { THEME, Theme } from './types';
+import { DEFAULT_THEME, Theme } from './types';
 
 type ThemeContextType = {
     theme: Theme;
@@ -7,7 +7,7 @@ type ThemeContextType = {
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
-    theme: THEME.DARK,
+    theme: DEFAULT_THEME,
     setTheme: () => {},
 });
 
