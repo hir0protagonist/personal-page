@@ -1,6 +1,9 @@
 .post {
     text-wrap: pretty;
     width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: var(--slide-up);
 }
 
 .post blockquote {

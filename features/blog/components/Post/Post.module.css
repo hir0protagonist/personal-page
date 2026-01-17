@@ -4,8 +4,11 @@
 }
 
 .post {
-    color: var(--text-primary);
-    transition: var(--color-transition);
+    max-width: 800px;
+}
+
+.post_wide {
+    max-width: 1000px;
 }
 
 .post h1 {

@@ -5,9 +5,9 @@ import PostContent from '../PostContent/PostContent';
 import { PostLanguage } from '../../types';
 import { getPostMeta } from '../../services/posts.service';
 import styles from './Post.module.css';
-import TableOfContent from '../TableOfContent/TableOfContent';
 import Button from '@/ui/components/Button/Button';
 import { notFound } from 'next/navigation';
+import clsx from 'clsx';
 
 type PostProps = {
     slug: string;
@@ -22,7 +22,7 @@ export default async function Post({ slug, language }: PostProps) {
     if (!meta) return notFound();
 
     return (
-        <article className={styles.post}>
+        <article className={clsx(styles.post, meta.tableOfContent && styles['post_wide'])}>
             <header>
                 <section className={styles.nav}>
                     <Button as='link' href='/posts' variant='ghost'>

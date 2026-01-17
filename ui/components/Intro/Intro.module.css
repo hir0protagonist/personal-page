@@ -6,6 +6,9 @@
 
 .intro p {
     text-wrap: pretty;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: var(--slide-up);
 }
 
 .intro > footer {

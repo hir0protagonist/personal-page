@@ -7,7 +7,7 @@ export function SystemIcon() {
             height="24"
             aria-hidden="true"
             role="img">
-            <title>Syetem mode</title>
+            <title>System default</title>
             <circle
                 cx="12"
                 cy="12"
