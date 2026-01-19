@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Header from '@/ui/components/Header/Header';
 import styles from './layout.module.css';
 
@@ -10,9 +9,6 @@ export default function BlogLayout({
     return (
         <div className={styles.blog}>
             <Header />
-            <section className={styles.back}>
-                {/* <Link href={'/posts'}>Back to posts</Link> */}
-            </section>
             {children}
         </div>
     );

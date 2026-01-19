@@ -25,8 +25,8 @@ export default async function RootLayout({
             </Script>
             <body>
                 <ThemeProvider storedTheme={theme}>
-                    <main id="main">{children}</main>
-                    <footer>© Given Existence | 2025</footer>
+                    <main id='main'>{children}</main>
+                    <footer>© Given Existence | {new Date().getFullYear()}</footer>
                 </ThemeProvider>
             </body>
         </html>

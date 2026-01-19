@@ -7,10 +7,16 @@ export function Intro() {
             <p>
                 Welcome to my personal corner of the Internet — a place I never really expected
                 anyone to visit, including myself. I’m not entirely sure what this page is supposed
-                to be, but here it is, existing anyway. If you’ve stumbled in, please don’t take
-                anything too seriously; I certainly didn’t when I made it. Think of this as a
-                digital lost-and-found box, except I’m the one who’s lost, and I’m not sure what was
-                meant to be found. Enjoy the confusion. I do.
+                to be, but here it is, existing anyway...
+            </p>
+            <br />
+            <p>
+                If you’ve stumbled in, please don’t take anything too seriously; I certainly didn’t
+                when I made it. You may find a few posts scattered around, mostly written for
+                experimental or placeholder purposes. They’re not meant to form a proper blog or
+                deliver anything particularly meaningful — at least not yet. For now, they exist
+                simply to fill space, test ideas, and give this site something to be, until its
+                purpose (if any) becomes clearer in the future.
             </p>
             <footer>
                 <Button as='link' href='/posts' variant='ghost' size='md'>
