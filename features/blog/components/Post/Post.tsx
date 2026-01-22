@@ -24,12 +24,6 @@ export default async function Post({ slug, language }: PostProps) {
     return (
         <article className={clsx(styles.post, meta.tableOfContent && styles['post_wide'])}>
             <header>
-                <section className={styles.nav}>
-                    <Button as='link' href='/posts' variant='ghost'>
-                        More Posts
-                    </Button>
-                </section>
-
                 <ViewTransition name={'post-' + slug}>
                     <h1 id='post'>{meta.title}</h1>
                 </ViewTransition>
@@ -42,6 +36,11 @@ export default async function Post({ slug, language }: PostProps) {
             <Suspense fallback={<PostContentLoader />}>
                 <div className={styles.content}>
                     <PostContent slug={slug} lang={lang} tableOfContent={meta.tableOfContent} />
+                </div>
+                <div className={styles.nav}>
+                    <Button as='link' href='/posts' variant='ghost'>
+                        More Posts
+                    </Button>
                 </div>
             </Suspense>
         </article>

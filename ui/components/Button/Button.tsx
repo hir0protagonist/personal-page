@@ -6,7 +6,7 @@ import {
     useMemo,
 } from 'react';
 import styles from './Button.module.css';
-import clsx, { ClassArray } from 'clsx';
+import clsx from 'clsx';
 import Link, { LinkProps } from 'next/link';
 
 type CustomButtonProps = Partial<{

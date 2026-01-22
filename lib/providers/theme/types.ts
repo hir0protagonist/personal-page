@@ -6,6 +6,6 @@ export const THEME = {
     DARK: 'dark',
 } as const;
 
-export const DEFAULT_THEME = THEME.SYSTEM;
+export const DEFAULT_THEME = THEME.DARK;
 
 export type Theme = ObjectValues<typeof THEME>;

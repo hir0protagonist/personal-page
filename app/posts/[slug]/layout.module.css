@@ -13,12 +13,7 @@
 }
 
 .blog article {
-    /* max-width: 800px; */
     width: 100%;
-}
-
-.blog article:has(aside) {
-    /* max-width: 1000px; */
 }
 
 .back {

@@ -1,9 +1,10 @@
 .posts {
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr;
     place-content: center;
-    padding: 30px;
     gap: 60px;
+    grid-auto-rows: 1fr;
 
     @media (min-width: 1000px) {
         grid-template-columns: repeat(2, 1fr);

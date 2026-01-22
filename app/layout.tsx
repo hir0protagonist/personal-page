@@ -9,6 +9,7 @@ import './globals.css';
 export const metadata: Metadata = {
     title: 'Given Existence',
     description: `Hi! My Name is Sergey. This is my personal page.`,
+    robots: 'noindex',
 };
 
 export default async function RootLayout({

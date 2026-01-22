@@ -7,9 +7,9 @@ export default function BlogLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className={styles.blog}>
-            <Header />
-            {children}
-        </div>
+        <>
+            <Header title="" links={[{ title: 'Posts', href: '/posts' }]} />
+            <div className={styles.blog}>{children}</div>
+        </>
     );
 }

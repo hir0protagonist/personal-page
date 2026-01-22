@@ -1,6 +1,8 @@
 .nav {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .post {
@@ -14,6 +16,7 @@
 .post h1 {
     color: var(--accent);
     font-size: 1.75rem;
+    text-align: center;
 }
 
 .post header section {

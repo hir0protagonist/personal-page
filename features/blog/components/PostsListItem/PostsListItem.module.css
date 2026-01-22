@@ -2,18 +2,26 @@
     color: var(--text-secondary);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 20px;
     transition: transform 0.5s ease;
     min-height: 130px;
+    padding: 1.25rem 1.5rem;
+    height: 100%;
 
     @media (max-width: 600px) {
         flex-direction: column;
         width: auto;
+        justify-content: start;
+        align-items: start;
     }
 }
 
 .post:hover {
     transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
 }
 
 .post main h2 {
@@ -38,5 +46,6 @@
 
     @media (max-width: 600px) {
         justify-content: center;
+        width: 100%;
     }
 }

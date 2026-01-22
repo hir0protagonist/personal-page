@@ -1,10 +1,18 @@
 import NotFound from '@/ui/components/NotFound/NotFound';
 import Header from '@/ui/components/Header/Header';
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: 'Not Found',
+        description: ''
+    };
+}
 
 export default function NotFoundPage() {
     return (
         <>
-            <Header />
+            <Header links={[{ href: '/', title: 'About' }]} />
             <div
                 style={{
                     width: '100%',

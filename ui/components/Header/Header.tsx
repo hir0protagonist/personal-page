@@ -2,6 +2,7 @@ import { ViewTransition } from 'react';
 import ThemeToggle from '@/ui/components/ThemeToggle/ThemeToggle';
 import styles from './Header.module.css';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 type HeadLink = {
     href: string;
@@ -14,22 +15,29 @@ type HeaderProps = {
 };
 
 export default function Header({ title, links = [] }: HeaderProps) {
+    const isEmpty = !title && !links.length;
+
     return (
-        <header className={styles.header}>
-            <section className={styles.navigation}>
-                <ViewTransition name='title'>{title && <h1>{title}</h1>}</ViewTransition>
-                {!!links.length && (
-                    <nav>
-                        <ul>
-                            {links.map(({ href, title }) => (
-                                <li key={href}>
-                                    <Link href={href}>{title}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                )}
-            </section>
+        <header className={clsx([styles.header, isEmpty && styles['header_empty']])}>
+            {!isEmpty && (
+                <nav className={styles.nav}>
+                    <ViewTransition name='title'>
+                        {title && (
+                            <h1 className={clsx(styles['nav-item'], styles['nav-item_active'])}>
+                                {title}
+                            </h1>
+                        )}
+                    </ViewTransition>
+                    {!!links.length &&
+                        links.map(({ href, title }, i) => (
+                            <ViewTransition key={href} name={`nav-${i}`}>
+                                <Link key={href} href={href} className={styles['nav-item']}>
+                                    {title}
+                                </Link>
+                            </ViewTransition>
+                        ))}
+                </nav>
+            )}
             <ViewTransition name='theme'>
                 <ThemeToggle />
             </ViewTransition>
