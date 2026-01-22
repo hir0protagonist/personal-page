@@ -8,7 +8,13 @@ export default function BlogLayout({
 }>) {
     return (
         <>
-            <Header title="" links={[{ title: 'Posts', href: '/posts' }]} />
+            <Header
+                title=''
+                links={[
+                    { href: '/', title: 'About' },
+                    { title: 'Posts', href: '/posts' },
+                ]}
+            />
             <div className={styles.blog}>{children}</div>
         </>
     );

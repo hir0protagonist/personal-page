@@ -4,6 +4,7 @@ import { PostLanguage, PostTOCItem } from '../../types';
 import { getPost } from '../../services/posts.service';
 import TableOfContent from '../TableOfContent/TableOfContent';
 import { notFound } from 'next/navigation';
+import { ViewTransition } from 'react';
 
 type PostContentProps = {
     slug: string;
@@ -18,14 +19,16 @@ export default async function PostContent({ slug, lang, tableOfContent = [] }: P
 
     return (
         <>
-            <article aria-labelledby='post' className={styles.post}>
-                <MDXRemote source={post} />
-            </article>
-            {!!tableOfContent.length && (
-                <aside className={styles.aside}>
-                    <TableOfContent items={tableOfContent} lang={lang} />
-                </aside>
-            )}
+            <ViewTransition name='text'>
+                <article aria-labelledby='post' className={styles.post}>
+                    <MDXRemote source={post} />
+                </article>
+                {!!tableOfContent.length && (
+                    <aside className={styles.aside}>
+                        <TableOfContent items={tableOfContent} lang={lang} />
+                    </aside>
+                )}
+            </ViewTransition>
         </>
     );
 }
