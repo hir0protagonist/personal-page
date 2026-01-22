@@ -24,7 +24,7 @@
     align-items: end;
     width: 100%;
     gap: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 
         @media (max-width: 600px) {
         justify-content: center;
