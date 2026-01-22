@@ -5,7 +5,7 @@ import styles from './page.module.css';
 export default function HomePage() {
     return (
         <>
-            <Header title="About"/>
+            <Header title="Sergey's homepage"/>
             <div className={styles.content}>
                 <Intro></Intro>
             </div>
