@@ -1,8 +1,9 @@
 :root {
     color-scheme: dark light;
 
-    --font-mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        'Liberation Mono', monospace;
+    --font-mono:
+        'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        monospace;
     --font-serif: 'Sriracha', 'Wotfard-fallback', sans-serif;
     --font-size: 100%;
     --line-height: 1.7;
@@ -42,6 +43,8 @@
 
     --btn-focus-ring-light: hsl(224 100% 70% / 0.45);
 
+    --surface-bg-light: rgba(255, 255, 255, 0.9);
+
     /* Dark mode */
     --accent-dark-h: 42;
     --accent-dark-s: 78%;
@@ -69,6 +72,8 @@
     --btn-ghost-active-dark: rgba(255, 255, 255, 0.08);
 
     --btn-focus-ring-dark: hsl(42 70% 60% / 0.45);
+
+    --surface-bg-dark: rgba(0, 0, 0, 0.75);
 
     --accent: light-dark(var(--accent-light), var(--accent-dark));
     --bg-gradient: light-dark(var(--bg-gradient-light), var(--bg-gradient-dark));
@@ -104,6 +109,8 @@
 
     --btn-focus-ring: light-dark(var(--btn-focus-ring-light), var(--btn-focus-ring-dark));
 
+    --surface-bg: light-dark(var(--surface-bg-light), var(--surface-bg-dark));
+
     --breakpoint-sm: 480px;
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
@@ -134,6 +141,8 @@
     --btn-ghost-text: var(--btn-ghost-text-light);
 
     --btn-focus-ring: var(--btn-focus-ring-light);
+
+    --surface-bg: var(--surface-bg-light);
 }
 
 :root[data-theme='dark'] {
@@ -158,6 +167,8 @@
     --btn-ghost-text: var(--btn-ghost-text-dark);
 
     --btn-focus-ring: var(--btn-focus-ring-dark);
+
+    --surface-bg: var(--surface-bg-dark);
 }
 
 /* .d-js-required {
@@ -229,8 +240,8 @@ body > footer {
 }
 
 @keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

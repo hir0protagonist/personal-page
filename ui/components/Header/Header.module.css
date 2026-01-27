@@ -11,6 +11,33 @@
     }
 }
 
+@media (min-width: 600px) {
+    @supports (animation-timeline: scroll()) {
+        .header {
+            padding: 0.25rem 1.5rem;
+            border-radius: 22px;
+            z-index: 10;
+            position: sticky;
+            top: -20px;
+            animation: shrink linear both;
+            animation-timeline: scroll();
+            animation-range: 100px 101px;
+        }
+    }
+
+    @keyframes shrink {
+        to {
+            background: var(--surface-bg);
+            justify-content: space-around;
+            width: max-content;
+            gap: 1.25rem;
+            justify-content: center;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
 .header_empty {
     justify-content: center;
 }
@@ -45,7 +72,7 @@
 .nav-item:hover {
     border-radius: 10px;
     justify-content: center;
-    transform: scale(1.25);
+    transform: scale(1.15);
     color: var(--accent);
 }
 

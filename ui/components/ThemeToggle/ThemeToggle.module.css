@@ -1,3 +1,8 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .toggle {
     border: none;
     color: unset;

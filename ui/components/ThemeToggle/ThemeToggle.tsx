@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '@/lib/providers/theme/ThemeContext';
 import styles from './ThemeToggle.module.css';
 import { SystemIcon, SunIcon, MoonIcon } from './icons';
+import clsx from 'clsx';
 
 export default function ThemeToggle() {
     const { theme, setTheme } = useContext(ThemeContext);
@@ -12,7 +13,7 @@ export default function ThemeToggle() {
     const nextTheme = isLight ? 'dark' : isDark ? 'system' : 'light';
 
     return (
-        <div className="d-js-required">
+        <div className={clsx('d-js-required"', styles.wrapper)}>
             <button
                 aria-label="Theme Toggle"
                 className={styles.toggle}

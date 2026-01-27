@@ -5,7 +5,12 @@ import PostsListItems from '../PostsListItems/PostsListItems';
 export default async function PostList() {
     return (
         <div>
-            <Header title='[Not a] Blog' links={[{ title: 'About', href: '/' }]} />
+            <Header
+                links={[
+                    { href: '/', title: 'About' },
+                    { title: 'Posts', href: '/posts', active: true },
+                ]}
+            />
             <section className={styles.posts}>
                 <PostsListItems></PostsListItems>
             </section>

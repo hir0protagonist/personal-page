@@ -19,7 +19,7 @@ export default async function PostContent({ slug, lang, tableOfContent = [] }: P
 
     return (
         <>
-            <ViewTransition name='text'>
+            <ViewTransition name='content'>
                 <article aria-labelledby='post' className={styles.post}>
                     <MDXRemote source={post} />
                 </article>

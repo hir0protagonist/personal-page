@@ -17,7 +17,7 @@ export default function NotFound({ backLink, message }: NotFoundProps) {
             <section className={styles.scene}>
                 <Image alt='Tumbleweed' src='/tumbleweed.png' width={125} height={125} />
             </section>
-            <ViewTransition name='text'>
+            <ViewTransition name='content'>
                 <p>{message || `Uh-Oh... This page has been removed or never existed.`}</p>
             </ViewTransition>
             {backLink && (

@@ -7,6 +7,7 @@ import clsx from 'clsx';
 type HeadLink = {
     href: string;
     title: string;
+    active?: boolean;
 };
 
 type HeaderProps = {
@@ -29,9 +30,15 @@ export default function Header({ title, links = [] }: HeaderProps) {
                         )}
                     </ViewTransition>
                     {!!links.length &&
-                        links.map(({ href, title }, i) => (
+                        links.map(({ href, title, active }, i) => (
                             <ViewTransition key={href} name={`nav-${i}`}>
-                                <Link key={href} href={href} className={styles['nav-item']}>
+                                <Link
+                                    key={href}
+                                    href={href}
+                                    className={clsx(
+                                        styles['nav-item'],
+                                        active && styles['nav-item_active']
+                                    )}>
                                     {title}
                                 </Link>
                             </ViewTransition>

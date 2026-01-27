@@ -5,14 +5,19 @@ import { Metadata } from 'next';
 export async function generateMetadata(): Promise<Metadata> {
     return {
         title: 'Not Found',
-        description: ''
+        description: '',
     };
 }
 
 export default function NotFoundPage() {
     return (
         <>
-            <Header links={[{ href: '/', title: 'About' }]} />
+            <Header
+                links={[
+                    { href: '/', title: 'About' },
+                    { title: 'Posts', href: '/posts' },
+                ]}
+            />
             <div
                 style={{
                     width: '100%',

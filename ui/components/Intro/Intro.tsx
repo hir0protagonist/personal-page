@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 export function Intro() {
     return (
         <article className={styles.intro}>
-            <ViewTransition name='text'>
+            <ViewTransition name='content'>
                 <p>
                     Welcome to my personal corner of the Internet — a place I never really expected
                     anyone to visit, including myself. I’m not entirely sure what this page is

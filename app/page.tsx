@@ -5,7 +5,12 @@ import styles from './page.module.css';
 export default function HomePage() {
     return (
         <>
-            <Header title="Sergey's homepage"/>
+            <Header
+                links={[
+                    { href: '/', title: 'About', active: true },
+                    { title: 'Posts', href: '/posts' },
+                ]}
+            />
             <div className={styles.content}>
                 <Intro></Intro>
             </div>
